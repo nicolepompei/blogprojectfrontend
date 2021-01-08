@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; //NgModel lives here
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BlogpostPanelComponent } from './blogpost-panel/blogpost-panel.component';
@@ -22,7 +24,9 @@ import { BlogpostPanelListComponent } from './blogpost-panel-list/blogpost-panel
     BlogpostPanelListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
