@@ -7,6 +7,6 @@ export interface Blogpost {
     fulltext: string;
     username: string;
     imagelink: string;
-    //note - alter postreponse to return set of strings
+    // note - alter postreponse to return set of strings
     tags: Set<string>;
 }

@@ -30,7 +30,6 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js"
-              
             ]
           },
           "configurations": {
@@ -125,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "blogprojectfrontend"
+  "defaultProject": "blogprojectfrontend",
+  "cli": {
+    "analytics": false
+  }
 }
