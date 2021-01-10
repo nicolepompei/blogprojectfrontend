@@ -11,7 +11,7 @@
                         <div class="form-group row">
                             <label for="email_address" class="col-md-4 col-form-label text-md-right">Email Address</label>
                             <div class="col-md-6">
-                                <input type="text" [formControlName]="email" id="email_address" class="form-control" name="email-address" required autofocus>
+                                <input type="text" [formControlName]="'email'" id="email_address" class="form-control" name="email-address" required autofocus>
                                 <span *ngIf ="!signupForm.get('email').valid && signupForm.get('email').touched">
                                     Please provide a valid email
                                 </span>
@@ -41,7 +41,7 @@
                             <button type="submit" class="sign-up">
                                 Sign Up
                             </button>
-                            <span style="="padding-left:15px>Existing user?<a routerLink="/login"> Log In</a></span>
+                            <span style="padding-left:15px">Existing user?<a routerLink="/login"> Log In</a></span>
                         </span>
                     </form>
                 </div>
