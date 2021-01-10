@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { BlogpostPanelListComponent } from './blogpost-panel-list/blogpost-panel-list.component';
 import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.component';
 import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
+import { CreateblogpostComponent } from './createblogpost/createblogpost.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
     LogoutComponent,
     BlogpostPanelListComponent,
     NavbarLoggedInComponent,
-    NavbarPublicComponent
+    NavbarPublicComponent,
+    CreateblogpostComponent
   ],
   imports: [
     BrowserModule,
