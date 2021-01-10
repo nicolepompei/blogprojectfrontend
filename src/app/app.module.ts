@@ -13,6 +13,7 @@ import { BlogpostPanelListComponent } from './blogpost-panel-list/blogpost-panel
 import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.component';
 import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
 import { SignupComponent } from './signup/signup.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

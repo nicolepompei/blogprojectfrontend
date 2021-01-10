@@ -10,7 +10,7 @@
                             <label for="user_name" class="col-md-4 col-form-label text-md-right">Username</label>
                             <div class="col-md-6">
                                 <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="'user_name'" required autofocus>
-                                <span *ngIf="!loginForm.get('username').valid && loginForm.get('username).touched">
+                                <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
                                     Please provide a valid username
                                 </span>
                             </div>

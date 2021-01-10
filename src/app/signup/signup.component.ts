@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthserviceService } from '../service/authservice.service';
 import { SignupRequestPayload } from './signup-request.payload';
 
 @Component({
@@ -11,7 +12,8 @@ export class SignupComponent implements OnInit {
 
   signupRequestPayload: SignupRequestPayload;
   signupForm: FormGroup;
-  constructor() { 
+
+  constructor(private authService: AuthserviceService) { 
     this.signupRequestPayload = {
       username: '',
       password: '',
@@ -31,6 +33,11 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayload.username =  this.signupForm.get('username').value;
     this.signupRequestPayload.email = this.signupForm.get('email').value;
     this.signupRequestPayload.password = this.signupForm.get('password').value;
+
+    this.authService.signup(this.signupRequestPayload)
+      .subscribe(data => {
+        console.log(data);
+      });
   }
 
 }
