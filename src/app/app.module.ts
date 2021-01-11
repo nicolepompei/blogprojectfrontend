@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //NgModel lives here
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BlogpostPanelComponent } from './blogpost-panel/blogpost-panel.component';
@@ -14,6 +14,10 @@ import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.com
 import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpinterceptorService } from './service/httpinterceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +37,17 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpinterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
