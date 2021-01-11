@@ -6,7 +6,7 @@ export class Blogpost {
   public blurb: string;
   public fulltext: string;
   public username: string;
-  public imagelink: string;
+  public imageLink: string;
   public tags: Set<string>;
 
   constructor() {}

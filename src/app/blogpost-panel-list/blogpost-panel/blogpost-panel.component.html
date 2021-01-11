@@ -1,17 +1,16 @@
-<div class="panel panel-primary border">
-  <div class="panel-body">
+<div class="card">
+  <div class="card-header">
     <img [src]="blogpost.imageLink"
-         alt="Post Image" class="img-responsive">
+         alt="Post Image" class="card-img-top">
   </div>
-  <div class="panel-footer">
-    <div>
-      <h3>{{ blogpost.title }}</h3>
-    </div>
-    <div>
-      <h4>{{ blogpost.blurb }}</h4>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ blogpost.title }}</h5>
+    <p class="card-text">By: {{ blogpost.username }}</p>
+    <p class="card-text">On: {{ blogpost.updateTimestamp }}</p>
+    <p class="card-text">{{ blogpost.blurb }}</p>
+    <a href="#" class="btn btn-primary">Read post...</a>
   </div>
-  <br>
-  <br>
-  <br>
 </div>
+<br>
+<br>
+
