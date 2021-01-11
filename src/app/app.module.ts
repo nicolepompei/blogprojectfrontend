@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms'; //NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BlogpostPanelComponent } from './blogpost-panel/blogpost-panel.component';
+import { BlogpostPanelComponent } from './blogpost-panel-list/blogpost-panel/blogpost-panel.component';
 import { BlogpostFullviewComponent } from './blogpost-fullview/blogpost-fullview.component';
 import { TagbarComponent } from './tagbar/tagbar.component';
 import { LoginComponent } from './login/login.component';

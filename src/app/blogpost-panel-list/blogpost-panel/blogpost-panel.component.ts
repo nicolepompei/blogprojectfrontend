@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Blogpost} from './Blogpost Models/blogpost.model';
+
 
 @Component({
   selector: 'app-blogpost-panel',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blogpost-panel.component.css']
 })
 export class BlogpostPanelComponent implements OnInit {
+  @Input() blogpost: Blogpost;
+  // @Input() imgPath = 'libreshot.com/wp-content/uploads/2016/07/programming.jpg';
+
 
   constructor() { }
 
