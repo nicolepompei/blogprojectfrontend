@@ -1,0 +1,92 @@
+{
+  "blogPostsList": [
+    {
+      "title": "The floating whales of Patagonia.",
+      "updateTimestamp": "January 5th 2021",
+      "blurb": "Have you heard of the illusive floating whales of Patagonia?",
+      "fulltext": "It may sound fantastical Reader, but I am here to tell you about the very real floating whales of Patagonia. This decidedly non-fantastical phenomenon is thanks to the actions of a little studied species of cyanobacteria, Heliosum Leviosum, found in the lungs and digestive tract of certain, mysterious pelagic whale species which emits Helium as a waste product. Scientists are still at a loss as to the exact causes or mechanisms by which certain colonies of H. Leviosum grow so large in some whales as to render these particular individuals less dense than water, and sometimes, even air. These 'boisterously bouyant baleines', as French cetologist Yves Laurent likes to refer to them, have to date only been found floating in the stratosphere over Patagonia. According to Laurent, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' And there you have it, everything you'll ever need to know about boisterously bouyant baleines of Patagonia.",
+      "tags": [
+        {
+          "tagName": "Whales"
+        },
+        {
+          "tagName": "Heliosum Leviosum"
+        },
+        {
+          "tagName": "Patagonia"
+        },
+        {
+          "tagName": "Argentina"
+        },
+        {
+          "tagName": "Cyanobacteria"
+        },
+        {
+          "tagName": "Cooking"
+        },
+        {
+          "tagName": "Quarantine Cooking"
+        }
+      ],
+      "imageLink": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/421b1552957103.5925d9876ce46.jpg",
+      "username": "Earl Atta-Fynn"
+    },
+    {
+      "title": "Stop and smell the roses.",
+      "updateTimestamp": "April 6th 1943",
+      "blurb": "He was standing before a garden, all a-bloom with roses.",
+      "fulltext": "But it happened that after walking for a long time through sand, and rocks, and snow, the little prince at last came upon a road. And all roads lead to the abodes of men. 'Good morning,' he said. He was standing before a garden, all a-bloom with roses. 'Good morning,' said the roses. The little prince gazed at them. They all looked like his flower. 'Who are you?' he demanded, thunderstruck.'We are roses,' the roses said.And he was overcome with sadness. His flower had told him that she was the only one of her kind in all the universe. And here were five thousand of them, all alike, in one single garden! 'She would be very much annoyed,' he said to himself, 'if she should see that . . . She would cough most dreadfully, and she would pretend that she was dying, to avoid being laughed at. And I should be obliged to pretend that I was nursing her back to life--for if I did not do that, to humble myself also, she would really allow herself to die. . .' Then he went on with his reflections: 'I thought that I was rich, with a flower that was unique in all the world; and all I had was a common rose. A common rose, and three volcanoes that come up to my knees--and one of them perhaps extinct forever . . . That doesn't make me a very great prince . . .And he lay down in the grass and cried.",
+
+      "tags": [
+        {
+          "tagName": "Le petit prince"
+        },
+        {
+          "tagName": "Antoine St. Exupery"
+        },
+        {
+          "tagName": "Roses"
+        },
+        {
+          "tagName": "prince"
+        },
+        {
+          "tagName": "Quarantine Cooking"
+        }
+      ],
+      "imageLink": "https://assets.catawiki.nl/assets/2017/6/27/7/6/c/76c234fe-271e-4eee-af1a-1a4c65b6799b.jpg",
+      "username": "Antoine St. Exupery"
+    },
+    {
+      "title": "The Second chronicle of the floating whales of Patagonia.",
+      "updateTimestamp": "January 2nd 2021",
+      "blurb": "Have you heard of the illusive floating whales of Patagonia?",
+      "fulltext": "It may sound fantastical Reader, but I am here to tell you about the very real floating whales of Patagonia. This decidedly non-fantastical phenomenon is thanks to the actions of a little studied species of cyanobacteria, Heliosum Leviosum, found in the lungs and digestive tract of certain, mysterious pelagic whale species which emits Helium as a waste product. Scientists are still at a loss as to the exact causes or mechanisms by which certain colonies of H. Leviosum grow so large in some whales as to render these particular individuals less dense than water, and sometimes, even air. These 'boisterously bouyant baleines', as French cetologist Yves Laurent likes to refer to them, have to date only been found floating in the stratosphere over Patagonia. According to Laurent, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' And there you have it, everything you'll ever need to know about boisterously bouyant baleines of Patagonia.",
+      "tags": [
+        {
+          "tagName": "Whales"
+        },
+        {
+          "tagName": "Heliosum Leviosum"
+        },
+        {
+          "tagName": "Patagonia"
+        },
+        {
+          "tagName": "Argentina"
+        },
+        {
+          "tagName": "Cyanobacteria"
+        },
+        {
+          "tagName": "Cooking"
+        },
+        {
+          "tagName": "Quarantine Cooking"
+        }
+      ],
+      "imageLink": "https://cdnb.artstation.com/p/assets/images/images/019/167/139/large/german-alvarez-01-final.jpg?1562297967",
+      "username": "Earl Atta-Fynn"
+    }
+  ]
+}
