@@ -16,6 +16,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class AuthserviceService {
 
+
   @Output() loggedIn: EventEmitter<boolean> = new EventEmitter();
   @Output() username: EventEmitter<string> = new EventEmitter();
 
@@ -37,9 +38,7 @@ export class AuthserviceService {
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean>{
-    let headers = new HttpHeaders().set('access-control-allow-origin',"http://localhost:8080/"); 
-
-    return this.httpClient.post<LoginResponse>(`${API_URL}/api/auth/login`, loginRequestPayload)
+    return this.httpClient.post<LoginResponse>(`${API_URL}/api/auth/signin`, loginRequestPayload)
       .pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
