@@ -4,6 +4,7 @@ import { AuthserviceService } from '../service/authservice.service';
 import { LoginRequestPayload } from './login.request.payload';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr'; 
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -46,14 +47,17 @@ export class LoginComponent implements OnInit {
     this.loginRequestPayload.password = this.loginForm.get('password').value;
 
     this.authService.login(this.loginRequestPayload).subscribe(data => {
-      if(data) {
+      //if(data) {
         this.isError = false;
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('');
         this.toastr.success('Login Successful');
-      } else{
+      }, error => {
         this.isError = true;
-      }
-    }); 
+        throwError(error);
+      }); 
+      //else{
+       // this.isError = true;
+   //}
   }
 
 }

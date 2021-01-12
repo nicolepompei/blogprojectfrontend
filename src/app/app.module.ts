@@ -17,6 +17,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpinterceptorService } from './service/httpinterceptor.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HttpinterceptorService } from './service/httpinterceptor.service';
     ReactiveFormsModule,
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
     {

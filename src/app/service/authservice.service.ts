@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Output } from '@angular/core';
 import { from, throwError } from 'rxjs';
 import { SignupRequestPayload } from '../signup/signup-request.payload';
@@ -24,14 +24,21 @@ export class AuthserviceService {
     username: this.getUserName
   }
 
+ 
+
   constructor(private httpClient: HttpClient, 
     private localStorage: LocalStorageService) { }
+
+    
+
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any>{
    return this.httpClient.post(`${API_URL}/api/auth/signup`, signupRequestPayload, { responseType: 'text'});
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean>{
+    let headers = new HttpHeaders().set('access-control-allow-origin',"http://localhost:8080/"); 
+
     return this.httpClient.post<LoginResponse>(`${API_URL}/api/auth/login`, loginRequestPayload)
       .pipe(map(data => {
         this.localStorage.store('authenticationToken', data.authenticationToken);
