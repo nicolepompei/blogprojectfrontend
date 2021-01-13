@@ -17,13 +17,17 @@ export class CreateblogpostComponent implements OnInit {
 
   uploadPhoto(): void {
     this.input = document.querySelector('#imgupload');
+    let imgPreview = document.querySelector('img');
     console.log(this.input.files[0]);
     this.imageService.uploadImage(this.input.files[0]).subscribe(
-     data =>  this.imgLink = data
+     data =>  
+      {
+      this.imgLink = data;
+      imgPreview.src = data;
+      console.log("link: " + this.imgLink);
+      }
     );
-    let imgPreview = document.querySelector('img');
-    imgPreview.src = this.imgLink;
-    console.log("link: " + this.imgLink);
+
   }
 
 }
