@@ -46,12 +46,13 @@ import { CreateblogpostComponent } from './createblogpost/createblogpost.compone
     AppRoutingModule
   ],
   providers: [
+    BlogpostPanelListComponent,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpinterceptorService,
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Blogpost} from './Blogpost Models/blogpost.model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,12 +10,15 @@ import {Blogpost} from './Blogpost Models/blogpost.model';
 })
 export class BlogpostPanelComponent implements OnInit {
   @Input() blogpost: Blogpost;
-  // @Input() imgPath = 'libreshot.com/wp-content/uploads/2016/07/programming.jpg';
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  fullPost(): void {
+    this.router.navigate(['${fullPost}']);
+  }
 }
+
