@@ -1,8 +1,8 @@
 <div class="container border p-3 bg-light">
-<form>
+<form (ngSubmit)="createPost()">
 <div class="form-group">
 <!-- <label for="titleinput">Title</label>  -->
-<input class ="form-control" type="text" placeholder = "Title">
+<input id='titleField' class="form-control" type="text" placeholder = "Title" value = "Title">
 <small id="titleHelp" class="form-text text-muted">Give your post a creative title.</small>
 </div> 
 
@@ -18,11 +18,11 @@
   </div>
 </form>
 
-<textarea class = "form-control" rows="5" placeholder = "Write your thoughts..."></textarea>
+<textarea id="fulltextField" class = "form-control" rows="5" placeholder = "Write your thoughts..."></textarea>
 </div>
 
 <div class="form-group">
-<input type="text" placeholder="Tags"> <button  class="btn btn-primary btn-lg float-right">Post</button>
+<input type="text" placeholder="Tags"> <button type="submit" class="btn btn-primary btn-lg float-right">Post</button>
 <small id="tagsHelp" class="form-text text-muted">Separate by commas (i.e. "cooking, baseball, funny")</small>
 </div>
 

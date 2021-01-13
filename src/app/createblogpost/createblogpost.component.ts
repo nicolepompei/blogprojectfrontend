@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from '../service/image.service';
+import { PostRequestPayload } from './post-request.payload';
+import { BlogpostService } from '../service/blogpost.service';
 
 @Component({
   selector: 'app-createblogpost',
@@ -10,7 +12,8 @@ export class CreateblogpostComponent implements OnInit {
   input;
   imgLink: string;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private imageService: ImageService,
+     private blogpostService: BlogpostService) { }
 
   ngOnInit(): void {
   }
@@ -29,5 +32,19 @@ export class CreateblogpostComponent implements OnInit {
     );
 
   }
+
+  createPost(): void{
+    let createdPost: PostRequestPayload = {
+      username: "asdf",
+      title: (document.getElementById("titleField") as HTMLInputElement).value,
+      blurb: "asdf",
+      fulltext: (document.getElementById("fulltextField") as HTMLInputElement).value,
+      imagelink: this.imgLink,
+      tags: null
+    }
+    console.log(createdPost.title);
+    this.blogpostService.blogpostConnector(createdPost);
+  }
+
 
 }
