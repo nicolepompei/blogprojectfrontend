@@ -1,6 +1,7 @@
 {
   "blogPostsList": [
     {
+      "id": "1",
       "title": "The floating whales of Patagonia.",
       "updateTimestamp": "January 5th 2021",
       "blurb": "Have you heard of the illusive floating whales of Patagonia?",
@@ -32,6 +33,7 @@
       "username": "Earl Atta-Fynn"
     },
     {
+      "id": "2",
       "title": "Stop and smell the roses.",
       "updateTimestamp": "April 6th 1943",
       "blurb": "He was standing before a garden, all a-bloom with roses.",
@@ -58,6 +60,7 @@
       "username": "Antoine St. Exupery"
     },
     {
+      "id": "3",
       "title": "The Second chronicle of the floating whales of Patagonia.",
       "updateTimestamp": "January 2nd 2021",
       "blurb": "Have you heard of the illusive floating whales of Patagonia?",

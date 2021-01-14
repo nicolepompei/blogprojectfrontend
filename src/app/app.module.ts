@@ -20,6 +20,7 @@ import { HttpinterceptorService } from './service/httpinterceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CreateblogpostComponent } from './createblogpost/createblogpost.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreateblogpostComponent } from './createblogpost/createblogpost.compone
     NavbarLoggedInComponent,
     NavbarPublicComponent,
     SignupComponent,
-    CreateblogpostComponent
+    CreateblogpostComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

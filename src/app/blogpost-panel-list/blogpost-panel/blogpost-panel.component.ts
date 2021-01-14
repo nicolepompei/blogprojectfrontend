@@ -18,7 +18,7 @@ export class BlogpostPanelComponent implements OnInit {
   }
 
   fullPost(): void {
-    this.router.navigate(['${fullPost}']);
+    // this.router.navigate(['/fullPost']);
   }
 }
 

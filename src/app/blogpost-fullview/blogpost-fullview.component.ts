@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogpostPanelListComponent} from '../blogpost-panel-list/blogpost-panel-list.component';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Blogpost} from "../blogpost-panel-list/blogpost-panel/Blogpost Models/blogpost.model";
+import {PostService} from "../service/post.service";
 
 @Component({
   selector: 'app-blogpost-fullview',
@@ -8,14 +10,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./blogpost-fullview.component.css']
 })
 export class BlogpostFullviewComponent implements OnInit {
-  blogposts = [];
+  blogpost: Blogpost;
 
-  constructor(
-    private blogpostPanelListComponent: BlogpostPanelListComponent, private router: Router) {
-    this.blogposts = this.blogpostPanelListComponent.getBlogpostList();
-  }
+  constructor(route: ActivatedRoute, postService: PostService) {}
 
   ngOnInit(): void {
+    this.blogpost =
   }
 
 }

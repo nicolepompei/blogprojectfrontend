@@ -12,4 +12,5 @@ export class PostService {
   getPosts(): Observable<any> {
     return this.httpClient.get<any>('http://localhost:3000/BlogPostsList');
   }
+
 }
