@@ -1,21 +1,54 @@
+<!-- clean this up! make a standard for the order of attributes, one quote or two, etc.-->
+<!-- add aria support -->
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container border p-3 bg-light">
-<form>
+<form (ngSubmit)="createPost()">
 <div class="form-group">
-<!-- <label for="titleinput">Title</label>  -->
-<input class ="form-control" type="text" placeholder = "Title">
-<small id="titleHelp" class="form-text text-muted">Give your post a creative title.</small>
+  <input id='titleField' class="form-control-lg" type="text" placeholder = "Title" value = "Title">
+  <small id="titleHelp" class="form-text text-muted">Give your post a creative title.</small>
 </div> 
+
+
 <div class="form-group">
-<img src="" alt="Image">
-<div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-<textarea class = "form-control" rows="5" placeholder = "Write your thoughts..."></textarea>
+  <input id='blurbField' class="form-control" type="text" placeholder = "Blurb">
+  <small id='blurbHelp' class="form-text text-muted">A quick summary of your post (users will see this on the dashboard instead of the full text of your post)</small>
 </div>
+
 <div class="form-group">
-<input type="text" placeholder="Tags"> <button  class="btn btn-primary btn-lg float-right">Post</button>
+<div class="preview">
+  <img src = '{{ imgLink }}' alt = "(Your image here)" class="img-thumbnail">
+</div>
+
+<form (ngSubmit)="uploadPhoto()">
+  <div class="form-group">
+    <input type="file" accept= "image/*" class="form-control-file" id="imgupload">
+    <button type="submit" class="btn btn-secondary btn-sm">Upload</button>
+  </div>
+</form>
+</div>
+
+<div class="form-group">
+<textarea id="fulltextField" class = "form-control" rows="5" placeholder = "Write your thoughts..."></textarea>
+</div>
+
+<div class="form-group row justify-content-between">
+
+<div class="col">
+<input type="text" placeholder="Tags" id="tagsField"> 
 <small id="tagsHelp" class="form-text text-muted">Separate by commas (i.e. "cooking, baseball, funny")</small>
+</div>
+
+<div class="col">
+<div class="float-right">
+<button type="submit" class="btn btn-primary btn-lg" [disabled]="postDisabled">Post</button>
+<small id="postHelp" *ngIf="postDisabled == true" class="form-text text-muted">You must upload an image before posting.</small>
+</div>
+</div>
+
 </div>
 
 
