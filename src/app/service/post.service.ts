@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -10,7 +10,11 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getPosts(): Observable<any> {
-    return this.httpClient.get<any>('http://localhost:3000/BlogPostsList');
+    return this.httpClient.get<any>('http://localhost:8080/posts');
+  }
+
+  getPostById(id): Observable<any> {
+    return this.httpClient.get<any>('http://localhost:8080/posts/' + id);
   }
 
 }

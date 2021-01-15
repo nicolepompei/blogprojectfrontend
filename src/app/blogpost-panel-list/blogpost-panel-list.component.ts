@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Blogpost} from './blogpost-panel/Blogpost Models/blogpost.model';
 import {HttpClient} from '@angular/common/http';
-import {PostService} from "../service/post.service";
+import {PostService} from '../service/post.service';
 
 
 @Component({
@@ -24,8 +24,10 @@ export class BlogpostPanelListComponent implements OnInit {
       .subscribe(response => {
         console.log(response);
         for (const post of response) {
-          const postObject = new Blogpost();
-          Object.assign(postObject, post);
+          const postObject = new Blogpost(
+            post.id, post.userName, post.title,
+            post.imageLink, post.blurb, post.fullText
+          );
           this.blogpostList.push(postObject);
           // console.log(postObject);
         }

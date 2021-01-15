@@ -32,7 +32,7 @@
                             <div class="col-md-6">
                                 <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password" required>
                                 <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
-                                    Please provide a valid password 
+                                    Please provide a valid password
                                 </span>
                             </div>
                         </div>
@@ -50,3 +50,4 @@
         <div class="col-md-3"></div>
     </div>
 </div>
+<router-outlet></router-outlet>

@@ -11,14 +11,9 @@ import {Router} from '@angular/router';
 export class BlogpostPanelComponent implements OnInit {
   @Input() blogpost: Blogpost;
 
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  fullPost(): void {
-    // this.router.navigate(['/fullPost']);
   }
 }
 

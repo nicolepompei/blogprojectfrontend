@@ -5,10 +5,10 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">{{ blogpost.title }}</h5>
-    <p class="card-text">By: {{ blogpost.username }}</p>
-    <p class="card-text">On: {{ blogpost.updateTimestamp }}</p>
+    <p class="card-text">By: {{ blogpost.userName }}</p>
+<!--    <p class="card-text">On: {{ blogpost.updateTimestamp }}</p>-->
     <p class="card-text">{{ blogpost.blurb }}</p>
-    <a routerLink="/fullPost/:{{ blogpost.id }}" class="btn btn-primary" >Read post...</a>
+    <a routerLink="/fullPost/{{ blogpost.id }}" class="btn btn-primary" >Read post...</a>
   </div>
 </div>
 <br>
