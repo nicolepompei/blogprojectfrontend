@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from "rxjs";
-import {API_URL} from "../app.constants";
+import {Observable} from 'rxjs';
+import {API_URL} from '../app.constants';
+import {PostRequestPayload} from '../createblogpost/post-request.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +23,11 @@ export class PostService {
     return this.httpClient.get<any>(API_URL + '/posts/tags/' + tag);
   }
 
+  blogpostConnector(postRequest: PostRequestPayload): Observable<any> {
+    console.log('sending to backend');
+    const headers = new HttpHeaders();
+    const response = this.httpClient.post(`${API_URL}/posts`, postRequest, { responseType: 'text'});
+    response.subscribe(resp => console.log(resp));
+    return response;
+  }
 }

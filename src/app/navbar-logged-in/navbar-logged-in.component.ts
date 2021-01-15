@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthserviceService} from "../service/authservice.service";
 
 @Component({
   selector: 'app-navbar-logged-in',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-logged-in.component.css']
 })
 export class NavbarLoggedInComponent implements OnInit {
+  tagName = '';
+  isLoggedIn;
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthserviceService) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
+    console.log(this.isLoggedIn);
   }
 
+  updateTagName(event: Event): void {
+    this.tagName = (event.target as HTMLInputElement).value;
+  }
+
+  navigateToSearchPostsByTag(): void {
+    this.router.navigate(['/search/' + this.tagName]);
+  }
+
+  logOut(): void {
+    this.authService.logout();
+    this.isLoggedIn = false;
+    this.router.navigate(['/home']);
+  }
 }
