@@ -22,16 +22,17 @@ export class BlogpostPanelListComponent implements OnInit {
   getBlogpostList(): any[] {
     this.postService.getPosts()
       .subscribe(response => {
-        console.log(response);
+        // console.log(response);
+        console.log(response.title);
         for (const post of response) {
           const postObject = new Blogpost(
             post.id, post.userName, post.title,
             post.imageLink, post.blurb, post.fullText
           );
           this.blogpostList.push(postObject);
-          // console.log(postObject);
         }
       });
+    console.log(this.blogpostList);
     return this.blogpostList;
   }
 }

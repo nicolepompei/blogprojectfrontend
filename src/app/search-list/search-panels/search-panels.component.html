@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <img [src]="blogPost.imageLink"
+         alt="Post Image" class="card-img-top">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ blogPost.title }}</h5>
+    <p class="card-text">By: {{ blogPost.userName }}</p>
+    <!--    <p class="card-text">On: {{ blogPost.updateTimestamp }}</p>-->
+    <p class="card-text">{{ blogPost.blurb }}</p>
+    <a routerLink="/fullPost/{{ blogPost.id }}" class="btn btn-primary" >Read post...</a>
+  </div>
+</div>
+<br>
+<br>

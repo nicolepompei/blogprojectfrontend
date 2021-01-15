@@ -21,6 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CreateblogpostComponent } from './createblogpost/createblogpost.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SearchListComponent } from './search-list/search-list.component';
+import { SearchPanelsComponent } from './search-list/search-panels/search-panels.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarPublicComponent,
     SignupComponent,
     CreateblogpostComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchListComponent,
+    SearchPanelsComponent
   ],
   imports: [
     BrowserModule,

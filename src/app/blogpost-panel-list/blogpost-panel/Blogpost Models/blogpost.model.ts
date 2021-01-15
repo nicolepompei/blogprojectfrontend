@@ -10,7 +10,8 @@ export class Blogpost {
   tags: Set<string>;
 
 
-  constructor(id: number, userName: string, title: string, imageLink: string, blurb: string, fullText: string) {
+  constructor(id: number, userName: string, title: string, imageLink: string,
+              blurb: string, fullText: string) {
     this.id = id;
     this.userName = userName;
     this.title = title;

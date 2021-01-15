@@ -27,11 +27,13 @@ export class BlogpostFullviewComponent implements OnInit {
   getBlog(): void {
     this.postService.getPostById(this.id)
       .subscribe(response => {
+        // this.blogpost = JSON.parse(response);
         const obj = response;
         this.blogpost = new Blogpost(
           obj.id, obj.userName, obj.title,
           obj.imageLink, obj.blurb, obj.fullText
         );
+
         // console.log(response);
         console.log(this.blogpost);
       });
