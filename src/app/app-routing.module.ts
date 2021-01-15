@@ -8,11 +8,12 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {BlogpostPanelListComponent} from "./blogpost-panel-list/blogpost-panel-list.component";
 import {SearchListComponent} from './search-list/search-list.component';
 import {LogoutComponent} from './logout/logout.component';
+import { RouteguardService } from './service/routeguard.service';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'createpost', component: CreateblogpostComponent},
+  {path: 'createpost', component: CreateblogpostComponent, canActivate: [RouteguardService]},
   {path: 'fullPost/:id', component: BlogpostFullviewComponent},
   {path: 'home', component: DashboardComponent},
   {path: '', component: DashboardComponent},
