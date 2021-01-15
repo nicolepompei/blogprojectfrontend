@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Blogpost} from './blogpost-panel/Blogpost Models/blogpost.model';
 import {HttpClient} from '@angular/common/http';
+import {PostService} from '../service/post.service';
 
 
 @Component({
@@ -10,27 +11,28 @@ import {HttpClient} from '@angular/common/http';
 })
 export class BlogpostPanelListComponent implements OnInit {
   blogpostList = [];
-  // imageSrc: string;
 
-  constructor(private httpClient: HttpClient) { }
-
-  ngOnInit(): void {
-    this.getAllBlogposts();
+  constructor(private postService: PostService) {
   }
 
-  getAllBlogposts(): void {
-    this.httpClient.get<any>('http://localhost:3000/blogpostsList')
+  ngOnInit(): void {
+    this.getBlogpostList();
+  }
+
+  getBlogpostList(): any[] {
+    this.postService.getPosts()
       .subscribe(response => {
-        console.log(response);
+        // console.log(response);
+        console.log(response.title);
         for (const post of response) {
-          const postObject = new Blogpost();
-          Object.assign(postObject, post);
-          // this.imageSrc = post.imagelink;
+          const postObject = new Blogpost(
+            post.id, post.userName, post.title,
+            post.imageLink, post.blurb, post.fullText
+          );
           this.blogpostList.push(postObject);
-          console.log(postObject);
-          console.log(post.imageLink);
         }
       });
-    // console.log(this.blogpostList);
+    console.log(this.blogpostList);
+    return this.blogpostList;
   }
 }
