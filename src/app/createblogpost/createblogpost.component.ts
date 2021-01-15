@@ -45,6 +45,11 @@ export class CreateblogpostComponent implements OnInit {
     console.log(createdPost.title);
     this.blogpostService.blogpostConnector(createdPost);
   }
-
+  
+  CreateTag(): void{
+  var string = 'one, two, test, word, rummy, words';
+  var arr = string.split(', ');
+  console.log( arr );
+  }
 
 }
