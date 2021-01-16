@@ -23,11 +23,15 @@ export class BlogpostPanelListComponent implements OnInit {
     this.postService.getPosts()
       .subscribe(response => {
         // console.log(response);
-        console.log(response.title);
+        //response.title wasn't working here b/c this is receiving an array
         for (const post of response) {
           const postObject = new Blogpost(
-            post.id, post.userName, post.title,
-            post.imageLink, post.blurb, post.fullText
+            post.id,
+             post.userName,
+              post.title,
+            post.imageLink,
+             post.blurb,
+              post.fullText
           );
           this.blogpostList.push(postObject);
         }

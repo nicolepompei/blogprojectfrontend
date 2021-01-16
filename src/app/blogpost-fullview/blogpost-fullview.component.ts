@@ -30,8 +30,12 @@ export class BlogpostFullviewComponent implements OnInit {
         // this.blogpost = JSON.parse(response);
         const obj = response;
         this.blogpost = new Blogpost(
-          obj.id, obj.userName, obj.title,
-          obj.imageLink, obj.blurb, obj.fullText
+          obj.id,
+           obj.userName,
+            obj.title,
+          obj.imageLink,
+           obj.blurb,
+            obj.fullText
         );
 
         // console.log(response);
