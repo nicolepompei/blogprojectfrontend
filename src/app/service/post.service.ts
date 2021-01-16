@@ -29,9 +29,8 @@ export class PostService {
 
   blogpostConnector(postRequest: PostRequestPayload): Observable<any> {
     console.log('sending to backend');
-    const headers = new HttpHeaders();
-    const response = this.httpClient.post(`${API_URL}/posts`, postRequest, { responseType: 'text'});
-    response.subscribe(resp => console.log(resp));
-    return response;
+    return this.httpClient.post(`${API_URL}/posts`, postRequest, { responseType: 'text'});
+    //response.subscribe(resp => console.log(resp));
+    //for error catching (set response to the htis.httpClient call)
   }
 }

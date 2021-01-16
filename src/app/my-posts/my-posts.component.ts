@@ -25,8 +25,13 @@ export class MyPostsComponent implements OnInit {
         for (const post of response){
           if (post.userName === this.authservice.getUserName()) {
             const postObject = new Blogpost(
-              post.id, post.userName, post.title,
-              post.imageLink, post.blurb, post.fullText
+              post.id,
+              post.userName,
+              post.title,
+              post.imageLink,
+              post.blurb,
+              post.fullText,
+              post.creationTimestamp
             );
             this.myPostsList.push(postObject);
           }

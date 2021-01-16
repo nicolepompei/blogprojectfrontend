@@ -30,7 +30,7 @@ export class SearchListComponent implements OnInit {
         for (const post of response) {
           const postObject = new Blogpost(
             post.id, post.userName, post.title,
-            post.imageLink, post.blurb, post.fullText,
+            post.imageLink, post.blurb, post.fullText, post.creationTimestamp
           );
           this.blogPostList.push(postObject);
           // Object.assign(postObject, response);
