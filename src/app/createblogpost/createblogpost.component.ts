@@ -61,13 +61,6 @@ export class CreateblogpostComponent implements OnInit {
 
     console.log(createdPost.title);
 
-    /*
-    Solutions tried:
-    Commenting out the entire .subscribe block: works, but no redirection
-    Commenting out the error catch: does not work
-    Changing createdPost from const to variable: 
-    Updating Observer interface to explicitly handle error
-    */
 
     this.postService.blogpostConnector(createdPost)
      .subscribe(

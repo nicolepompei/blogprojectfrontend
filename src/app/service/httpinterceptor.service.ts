@@ -30,7 +30,7 @@ export class HttpinterceptorService implements HttpInterceptor {
           if(jwtToken){
             return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
               if(error instanceof HttpErrorResponse
-                && error.status === 403){
+                && error.status === 401){
                   return this.handleAuthErrors(req, next);
                 } else {
                   return throwError(error);
@@ -45,11 +45,12 @@ export class HttpinterceptorService implements HttpInterceptor {
           this.isTokenRefreshing = true;
           this.refreshTokenSubject.next(null);
 
-          return this.authService.refreshToken().pipe(
+          return this.authService.refreshToken()
+          .pipe(
             switchMap((refreshTokenResponse: LoginResponse) => {
                 this.isTokenRefreshing = false;
-
-                this.refreshTokenSubject.next(refreshTokenResponse.authenticationToken);
+                this.refreshTokenSubject
+                .next(refreshTokenResponse.authenticationToken);
                 return next.handle(this.addToken(req, refreshTokenResponse.authenticationToken))
             })
           )
@@ -66,8 +67,11 @@ export class HttpinterceptorService implements HttpInterceptor {
       }
       private addToken(req: HttpRequest<any>, jwtToken: any){
         return req.clone({
-          headers: req.headers.set('Authorization',
-          'Bearer ' + jwtToken)
+          setHeaders: {
+            Authoriztion: `Bearer ${jwtToken}`
+          }
+          // headers: req.headers.set('Authorization',
+          // 'Bearer ' + jwtToken)
         });
       }
 }

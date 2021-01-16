@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="#">Blog</a>
+  <a class="navbar-brand" href="#">blrb</a>
   <form class="form-inline my-2 my-lg-0"
         (ngSubmit)="navigateToSearchPostsByTag()">
     <input class="form-control mr-sm-2"
            (input)="updateTagName($event)"
-           type="search" placeholder="Search"
+           type="search" placeholder="Search by tag"
            aria-label="Search">
     <button class="btn btn-outline-info my-2 my-sm-0"
             type="submit"
-            (click)="navigateToSearchPostsByTag()">Search
+            (click)="navigateToSearchPostsByTag()">Search by tag
     </button>
   </form>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
