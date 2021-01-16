@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BlogpostPanelListComponent } from './blogpost-panel-list/blogpost-panel-list.component';
 import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.component';
-import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,7 +33,6 @@ import { SearchPanelsComponent } from './search-list/search-panels/search-panels
     LogoutComponent,
     BlogpostPanelListComponent,
     NavbarLoggedInComponent,
-    NavbarPublicComponent,
     SignupComponent,
     CreateblogpostComponent,
     DashboardComponent,

@@ -61,11 +61,12 @@ export class CreateblogpostComponent implements OnInit {
 
     console.log(createdPost.title);
 
-    this.postService.blogpostConnector(createdPost).subscribe(() => {
-      this.router.navigate(['/'], { queryParams: { createdPost: 'true' } });
-    }, () => {
-      this.toastr.error('Something went wrong! Please try again.');
-    });
+    this.postService.blogpostConnector(createdPost);
+    //   .subscribe(() => {
+    //   this.router.navigate(['/'], { queryParams: { createdPost: 'true' } });
+    // }, () => {
+    //   this.toastr.error('Something went wrong! Please try again.');
+    // });
     }
 
   convertTagsFromLongStringToIndividualTags(t: string): Tag[]{
