@@ -37,7 +37,9 @@ button:active {
     transform: scale(0.99);
 }
 
-
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
 
 
 .login-failed{
@@ -45,6 +47,7 @@ button:active {
     margin: auto;
     margin-top: 10px;
     border: 2px solid black;
+    border-radius: 0.25rem;
     width: 65%;
     background-color: red;
 }
