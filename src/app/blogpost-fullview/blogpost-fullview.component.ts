@@ -35,7 +35,8 @@ export class BlogpostFullviewComponent implements OnInit {
             obj.title,
           obj.imageLink,
            obj.blurb,
-            obj.fullText
+            obj.fullText,
+            obj.creationTimestamp
         );
 
         // console.log(response);

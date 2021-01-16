@@ -31,7 +31,8 @@ export class BlogpostPanelListComponent implements OnInit {
               post.title,
             post.imageLink,
              post.blurb,
-              post.fullText
+              post.fullText,
+              post.creationTimestamp
           );
           this.blogpostList.push(postObject);
         }
