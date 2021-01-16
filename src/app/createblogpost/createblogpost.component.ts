@@ -50,7 +50,7 @@ export class CreateblogpostComponent implements OnInit {
 
   createPost(): void{
 
-    const createdPost: PostRequestPayload = {
+    let createdPost: PostRequestPayload = {
       username: this.authService.getUserName(),
       title: (document.getElementById('titleField') as HTMLInputElement).value,
       blurb: (document.getElementById('blurbField') as HTMLInputElement).value,
@@ -61,12 +61,14 @@ export class CreateblogpostComponent implements OnInit {
 
     console.log(createdPost.title);
 
-    this.postService.blogpostConnector(createdPost);
-    //   .subscribe(() => {
-    //   this.router.navigate(['/'], { queryParams: { createdPost: 'true' } });
-    // }, () => {
-    //   this.toastr.error('Something went wrong! Please try again.');
-    // });
+
+    this.postService.blogpostConnector(createdPost)
+     .subscribe(
+       () => {
+       this.router.navigate(['/home'], { queryParams: { postSuccessful: 'true' } });
+     }, err => {
+       this.toastr.error('Something went wrong! Please try again.');
+    });
     }
 
   convertTagsFromLongStringToIndividualTags(t: string): Tag[]{
