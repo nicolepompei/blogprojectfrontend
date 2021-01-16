@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BlogpostPanelListComponent } from './blogpost-panel-list/blogpost-panel-list.component';
 import { NavbarLoggedInComponent } from './navbar-logged-in/navbar-logged-in.component';
-import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
+// import { NavbarPublicComponent } from './navbar-public/navbar-public.component';
 import { SignupComponent } from './signup/signup.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +23,7 @@ import { CreateblogpostComponent } from './createblogpost/createblogpost.compone
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchPanelsComponent } from './search-list/search-panels/search-panels.component';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +35,13 @@ import { SearchPanelsComponent } from './search-list/search-panels/search-panels
     LogoutComponent,
     BlogpostPanelListComponent,
     NavbarLoggedInComponent,
-    NavbarPublicComponent,
+   // NavbarPublicComponent,
     SignupComponent,
     CreateblogpostComponent,
     DashboardComponent,
     SearchListComponent,
-    SearchPanelsComponent
+    SearchPanelsComponent,
+    MyPostsComponent
   ],
   imports: [
     BrowserModule,

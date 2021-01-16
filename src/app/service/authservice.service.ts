@@ -23,10 +23,10 @@ export class AuthserviceService {
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
     username: this.getUserName
-  }
+  };
 
   constructor(private httpClient: HttpClient,
-    private localStorage: LocalStorageService) { }
+              private localStorage: LocalStorageService) { }
 
 
 
