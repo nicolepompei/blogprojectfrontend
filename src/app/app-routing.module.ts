@@ -9,6 +9,7 @@ import {BlogpostPanelListComponent} from "./blogpost-panel-list/blogpost-panel-l
 import {SearchListComponent} from './search-list/search-list.component';
 import {LogoutComponent} from './logout/logout.component';
 import { RouteguardService } from './service/routeguard.service';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'home', component: DashboardComponent},
   {path: '', component: DashboardComponent},
   {path: 'list', component: BlogpostPanelListComponent},
-  {path: 'search/:tag', component: SearchListComponent}
+  {path: 'search/:tag', component: SearchListComponent},
+  {path: 'myPosts', component: MyPostsComponent}
 ];
 
 @NgModule({

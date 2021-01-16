@@ -3,7 +3,7 @@
   <br>
   <br>
   <app-blogpost-panel
-    *ngFor="let blogpost of blogpostList" [blogpost] = blogpost>
+    *ngFor="let blogpost of blogpostList.slice().reverse()" [blogpost] = blogpost>
   </app-blogpost-panel>
 </div>
 

@@ -22,6 +22,10 @@ export class PostService {
   getAllByTag(tag): Observable<any> {
     return this.httpClient.get<any>(API_URL + '/posts/tags/' + tag);
   }
+  getAllByUserName(name): Observable<any>{
+    return this.httpClient.get<any>(API_URL + '/blog/userName/' + name);
+  }
+
 
   blogpostConnector(postRequest: PostRequestPayload): Observable<any> {
     console.log('sending to backend');
