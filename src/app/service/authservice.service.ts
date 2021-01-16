@@ -22,7 +22,7 @@ export class AuthserviceService {
 
   refreshTokenPayload = {
     refreshToken: this.getRefreshToken(),
-    username: this.getUserName
+    username: this.getUserName()
   }
 
   constructor(private httpClient: HttpClient,
@@ -89,7 +89,7 @@ export class AuthserviceService {
     return this.localStorage.retrieve('username');
   }
 
-  getExpirationTIme(){
+  getExpirationTime(){
     return this.localStorage.retrieve('expiresAt');
   }
 
