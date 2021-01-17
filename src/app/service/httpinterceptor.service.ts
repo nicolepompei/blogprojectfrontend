@@ -13,7 +13,7 @@ export class HttpinterceptorService implements HttpInterceptor {
 
   isTokenRefreshing = false;
   //a behavior subject can have a value, the new token from refresh token is assigned to this 
-  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
+  refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(public authService: AuthserviceService) { }
 // in intercept method, recieve JWT through authService.getJetToken()
@@ -56,7 +56,7 @@ export class HttpinterceptorService implements HttpInterceptor {
           )
         } else {
           return this.refreshTokenSubject.pipe(
-                filter(result => result !==null),
+                filter(result => result !== null),
                 take(1),
                 switchMap((res) => {
                   return next.handle(this.addToken(req, 
@@ -68,7 +68,7 @@ export class HttpinterceptorService implements HttpInterceptor {
       private addToken(req: HttpRequest<any>, jwtToken: any){
         return req.clone({
           setHeaders: {
-            Authoriztion: `Bearer ${jwtToken}`
+            Authorization: `Bearer ${jwtToken}`
           }
           // headers: req.headers.set('Authorization',
           // 'Bearer ' + jwtToken)

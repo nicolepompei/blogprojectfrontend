@@ -7,7 +7,7 @@ import {AuthserviceService} from "./service/authservice.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'blogprojectfrontend';
+  title = 'blrb';
 
   constructor() {
   }
