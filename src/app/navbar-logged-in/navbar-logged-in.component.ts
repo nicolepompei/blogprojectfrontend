@@ -10,6 +10,8 @@ import {AuthserviceService} from "../service/authservice.service";
 export class NavbarLoggedInComponent implements OnInit {
   tagName = '';
   isLoggedIn;
+  toggle = true;
+  status = 'Enable';
 
   constructor(private router: Router, private authService: AuthserviceService) { }
 
@@ -32,4 +34,5 @@ export class NavbarLoggedInComponent implements OnInit {
     this.isLoggedIn = false;
     this.router.navigate(['/home']);
   }
+
 }
