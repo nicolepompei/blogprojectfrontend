@@ -1,5 +1,54 @@
+a.navbar-brand{
+    font-family: poppins;
+    font-size: 600;
+    font-weight: 600;
+}
+
+a.nav-link{
+    font-family: poppins;
+    font-size: 400;
+    font-weight: 400; 
+}
+
+button{
+    border: none;
+    border-radius: 0.25rem;
+    background: #00587a;
+    color: #ffffff;
+    font-family: poppins;
+    font-size: 1.1rem;
+    font-weight: 300;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #008891;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+input{
+    font-family: poppins;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
 
 .nav-pills > li > a.active {
   color: black;
   background-color: #d5d7d7;
 }
+
