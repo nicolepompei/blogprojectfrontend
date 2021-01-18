@@ -1,5 +1,8 @@
 .login-section{
+    /* position: relative;  */
     margin: 100px;
+    padding-top: 5.2rem;
+    padding-bottom: 0;
 }
 
 button {
@@ -30,6 +33,7 @@ form{
 h4{
     font-family: poppins;
     font-size: 500;
+    color:#ffffff;
 }
 
 button:hover,
@@ -47,7 +51,7 @@ button:active {
 }
 
 .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+    border-left: 5px solid #a94442; 
   }
 
 
@@ -57,6 +61,8 @@ button:active {
     margin: auto;
     margin-top: 10px;
     border: 2px solid black;
+    border-radius: 0.25rem;
+    padding: .5rem .1rem;
     width: 65%;
     background-color: red;
 }
@@ -71,14 +77,20 @@ button:active {
 .login-failed, .register-success{
     text-align: center;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     border: 2px solid black;
+    border-radius: 0.25rem;
+    padding: .1rem .1rem;
+    padding-bottom: 0%;
     width: 65%;
     background-color:red;
 }
 
 .login-failed-text, .register-success-text{
     text-align: center;
+    padding-top: .3rem;
+    font-size: 1.1rem;
+    font-weight: 300;
     margin-top: 5px;
     font-weight: bold;
     color: aliceblue;
