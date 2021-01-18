@@ -20,29 +20,29 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav nav-pills ml-auto" *ngIf="isLoggedIn === true">
       <li class="nav-item">
-        <a class="nav-link active text-dark" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" routerLink="/home">Dashboard<span class="sr-only">(current)</span></a>
+        <a class="nav-link active text-light" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" routerLink="/home">Dashboard<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" data-toggle="tab" role="tab" aria-controls="myposts" aria-selected="false" routerLink="/myPosts">My Posts</a>
+        <a class="nav-link text-light" data-toggle="tab" role="tab" aria-controls="myposts" aria-selected="false" routerLink="/myPosts">My Posts</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link  text-dark" data-toggle="tab" role="tab" aria-controls="createpost" aria-selected="false" routerLink="/createpost">Create Post</a>
+        <a class="nav-link  text-light" data-toggle="tab" role="tab" aria-controls="createpost" aria-selected="false" routerLink="/createpost">Create Post</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link  text-dark" routerLink="/home" (click)="logOut()">Log out</a>
+        <a class="nav-link  text-light" routerLink="/home" (click)="logOut()">Log out</a>
       </li>
     </ul>
 
 
     <ul class="nav nav-pills ml-auto" *ngIf="!isLoggedIn">
       <li class="nav-item">
-        <a class="nav-link active text-dark" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" routerLink="/home">Dashboard<span class="sr-only">(current)</span></a>
+        <a class="nav-link active text-light" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" routerLink="/home">Dashboard<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" data-toggle="tab" role="tab" aria-controls="register" aria-selected="false" routerLink="/signup">Register</a>
+        <a class="nav-link text-light" data-toggle="tab" role="tab" aria-controls="register" aria-selected="false" routerLink="/signup">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" data-toggle="tab" role="tab" aria-controls="login" aria-selected="false" routerLink="/login">Log in</a>
+        <a class="nav-link text-light" data-toggle="tab" role="tab" aria-controls="login" aria-selected="false" routerLink="/login">Log in</a>
       </li>
     </ul>
   </div>
