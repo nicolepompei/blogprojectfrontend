@@ -20,15 +20,27 @@ import {PostService} from '../service/post.service';
 export class CreateblogpostComponent implements OnInit {
   input;
   imgLink: string;
+  tagsPresent: string;
+  postRequestPayload: PostRequestPayload;
   postDisabled = true;
 
   constructor(private imageService: ImageService,
               private authService: AuthserviceService,
               private postService: PostService,
               private router: Router,
-              private toastr: ToastrService) { }
+              private toastr: ToastrService) {
+                this.postRequestPayload = {
+                  username: "",
+                  title: "",
+                  blurb: "",
+                  fulltext: "",
+                  imagelink: "",
+                  tags: []
+                }
+               }
 
   ngOnInit(): void {
+
   }
 
   uploadPhoto(): void {
@@ -60,6 +72,7 @@ export class CreateblogpostComponent implements OnInit {
     };
 
     console.log(createdPost.title);
+
 
 
     this.postService.blogpostConnector(createdPost)

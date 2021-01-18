@@ -6,18 +6,46 @@
 <br>
 <br>
 <div class="container border p-3 bg-light">
-<form (ngSubmit)="createPost()">
+<form (ngSubmit)="createPost()" #postForm="ngForm">
+
+<!-- title -->
 <div class="form-group">
-  <input id='titleField' class="form-control-lg" type="text" placeholder = "Title" value = "Title">
+  <input id='titleField' name="title" class="form-control-lg" type="text" placeholder="Title"
+   required pattern="^[^\s]+.*" maxlength="50"
+   [(ngModel)]="postRequestPayload.title" #title="ngModel">
   <small id="titleHelp" class="form-text text-muted">Give your post a creative title.</small>
+
+  <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+    <div *ngIf="title.errors.required">
+      You must provide a title for your post. 
+    </div>
+    <div *ngIf="title.errors.pattern">
+      Your title cannot start with a space and must have at least one (1) non-whitespace character.
+    </div>
+    <div *ngIf="title.errors.maxlength">
+      Your title cannot be longer than fifty (50) characters.
+    </div>
+  </div>
+
 </div> 
 
-
+<!-- blurb -->
 <div class="form-group">
-  <input id='blurbField' class="form-control" type="text" placeholder = "Blurb">
+  <input id='blurbField' name="blurb" class="form-control" type="text" placeholder = "Blurb" required pattern="^[^\s]+.*" maxlength="100" [(ngModel)]="postRequestPayload.blurb" #blurb="ngModel">
   <small id='blurbHelp' class="form-text text-muted">A quick summary of your post (users will see this on the dashboard instead of the full text of your post)</small>
+
+  <div *ngIf="blurb.invalid && (blurb.dirty || blurb.touched)" class="alert alert-danger">
+    <div *ngIf="blurb.errors.required">
+      You must provide a blurb for your post. 
+    </div>
+    <div *ngIf="blurb.errors.pattern">
+      Your blurb cannot start with a space and must have at least one (1) non-whitespace character.
+    </div>
+  </div>
+
 </div>
 
+<!-- image -->
 <div class="form-group">
 <div class="preview">
   <img src = '{{ imgLink }}' alt = "(Your image here)" class="img-thumbnail">
@@ -25,27 +53,54 @@
 
 <form (ngSubmit)="uploadPhoto()">
   <div class="form-group">
-    <input type="file" accept= "image/*" class="form-control-file" id="imgupload">
+    <input id="imgupload" name="image" type="file" accept= "image/*" class="form-control-file" required [(ngModel)]="input" #image="ngModel">
     <button type="submit" class="btn btn-secondary btn-sm">Upload</button>
+
+    <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+      <div *ngIf="image.errors.required">
+        You must provide an image for your post. 
+      </div>
+    </div>
+
+
   </div>
 </form>
 </div>
 
+<!-- full text -->
 <div class="form-group">
-<textarea id="fulltextField" class = "form-control" rows="5" placeholder = "Write your thoughts..."></textarea>
+<textarea id="fulltextField" name="fulltext" class = "form-control" rows="5" placeholder = "Write your thoughts..." required pattern="^[^\s]+.*" maxlength="1000"[(ngModel)]="postRequestPayload.fulltext" #fulltext="ngModel"></textarea>
+
+<div *ngIf="fulltext.invalid && (fulltext.dirty || fulltext.touched)" class="alert alert-danger">
+  <div *ngIf="fulltext.errors.required">
+    You must provide a body for your post. 
+  </div>
+  <div *ngIf="fulltext.errors.pattern">
+    The body of your post cannot start with a space and must have at least one (1) non-whitespace character.
+  </div>
+</div>
+
 </div>
 
 <div class="form-group row justify-content-between">
 
+<!-- tags -->
 <div class="col">
-<input type="text" placeholder="Tags" id="tagsField"> 
+<input  id="tagsField" name="tags" type="text" placeholder="Tags" required maxlength="100" [(ngModel)]="tagsPresent" #tags="ngModel"> 
 <small id="tagsHelp" class="form-text text-muted">Separate by commas (i.e. "cooking, baseball, funny")</small>
+
+<div *ngIf="tags.invalid && (tags.dirty || tags.touched)" class="alert alert-danger">
+  <div *ngIf="tags.errors.required">
+    You must provide tags for your post so that it can be searched for.
+  </div>
+</div>
+
 </div>
 
 <div class="col">
 <div class="float-right">
-<button type="submit" class="btn btn-primary btn-lg" [disabled]="postDisabled">Post</button>
-<small id="postHelp" *ngIf="postDisabled == true" class="form-text text-muted">You must upload an image before posting.</small>
+<button type="submit" class="btn btn-primary btn-lg" [disabled]="!postForm.form.valid">Post</button>
+<small id="postHelp" *ngIf="!postForm.form.valid" class="form-text text-muted">You must complete all fields (title, blurb, image, text, and tags) before posting.</small>
 </div>
 </div>
 
