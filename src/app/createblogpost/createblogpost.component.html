@@ -86,12 +86,16 @@
 
 <!-- tags -->
 <div class="col">
-<input  id="tagsField" name="tags" type="text" placeholder="Tags" required maxlength="100" [(ngModel)]="tagsPresent" #tags="ngModel"> 
+<input  id="tagsField" name="tags" type="text" placeholder="Tags"
+pattern="(([a-zA-z0-9]){1,30})((, ([a-zA-z0-9]){1,30}))*" required maxlength="100" [(ngModel)]="tagsPresent" #tags="ngModel"> 
 <small id="tagsHelp" class="form-text text-muted">Separate by commas (i.e. "cooking, baseball, funny")</small>
 
 <div *ngIf="tags.invalid && (tags.dirty || tags.touched)" class="alert alert-danger">
   <div *ngIf="tags.errors.required">
     You must provide tags for your post so that it can be searched for.
+  </div>
+  <div *ngIf="tags.errors.pattern">
+    Please enter a valid sequence of tags (no blank tags, no whitespace, separated by a comma and a space, 30 characters max).
   </div>
 </div>
 
