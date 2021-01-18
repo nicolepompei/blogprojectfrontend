@@ -13,11 +13,11 @@ button {
     padding: .8rem 1.6rem;
     margin: 0;
     text-decoration: none;
-    background: #17a2b8;
-    color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+    background: #00587a;
+    color: #e7e7de;
+    font-family: poppins;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 300;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out,
@@ -26,9 +26,19 @@ button {
     -moz-appearance: none;
 }
 
+form{
+    font-family: poppins;
+    font-size: 500;
+}
+
+h4{
+    font-family: poppins;
+    font-size: 500;
+}
+
 button:hover,
 button:focus {
-    background: #117685;
+    background: #008891;
 }
 
 button:focus {

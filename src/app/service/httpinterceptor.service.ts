@@ -30,7 +30,7 @@ export class HttpinterceptorService implements HttpInterceptor {
           if(jwtToken){
             return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
               if(error instanceof HttpErrorResponse
-                && error.status === 401){
+                && error.status === 403){
                   return this.handleAuthErrors(req, next);
                 } else {
                   return throwError(error);
@@ -65,7 +65,7 @@ export class HttpinterceptorService implements HttpInterceptor {
           );
         }
       }
-      private addToken(req: HttpRequest<any>, jwtToken: any){
+      private addToken(req: HttpRequest<any>, jwtToken: string){
         return req.clone({
           setHeaders: {
             Authorization: `Bearer ${jwtToken}`
