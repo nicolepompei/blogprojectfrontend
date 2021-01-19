@@ -12,11 +12,11 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getPosts(): Observable<any> {
-    return this.httpClient.get<any>('http://localhost:8080/posts');
+    return this.httpClient.get<any>(API_URL + '/posts');
   }
 
   getPostById(id): Observable<any> {
-    return this.httpClient.get<any>('http://localhost:8080/posts/' + id);
+    return this.httpClient.get<any>(API_URL+ '/posts/' + id);
   }
 
   getAllByTag(tag): Observable<any> {
