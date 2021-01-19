@@ -95,3 +95,9 @@ button:active {
     font-weight: bold;
     color: aliceblue;
 }
+
+.toast-top-center {
+    top: 20rem;
+    margin: 0 auto;
+    left: 50%;
+    }

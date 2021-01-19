@@ -6,7 +6,7 @@
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item" *ngFor="let tag of tagSet">
-          <a routerLink="/search/{{ tag }}" (click)="getPostsByTag()">
+          <a routerLink="/search/{{ tag }}" > 
               {{ tag }}
           </a>
     

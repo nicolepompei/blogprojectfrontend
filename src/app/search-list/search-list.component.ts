@@ -20,10 +20,17 @@ export class SearchListComponent implements OnInit {
   }
 
   retrieveTagName(): void {
-    this.tagName = this.activatedRoute.snapshot.params.tag;
-  }
+    this.activatedRoute.params.subscribe(params => {
+      if (params['tag']) {
+        this.tagName = params['tag'];
+        this.blogPostList = [];
+        this.getPostsByTag(); 
+      }
+  });
+}
 
   getPostsByTag(): void {
+    console.log("getting posts by tag");
     this.postService.getAllByTag(this.tagName)
       .subscribe(response => {
         console.log(response);

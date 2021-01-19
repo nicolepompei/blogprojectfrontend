@@ -26,7 +26,6 @@ export class TagbarComponent implements OnInit {
   ngOnInit(): void {
     this.getTagsList();
     this.retrieveTagName();
-    this.getPostsByTag();
   }
 
   getTagsList(): void {
@@ -55,11 +54,9 @@ export class TagbarComponent implements OnInit {
             post.imageLink, post.blurb, post.fullText, post.creationTimestamp
           );
           this.blogposts.push(postObject);
-          // Object.assign(postObject, response);
         }
       });
       console.log(this.blogposts);
-      //return this.blogPostListByTag;
   }
 
 }
