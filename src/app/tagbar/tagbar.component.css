@@ -10,3 +10,11 @@ li{
     font-weight: 200;
     margin: auto;
 }
+
+a{
+    color: #008891;
+}
+
+a:hover{
+    color:#00587a;
+}
