@@ -6,7 +6,7 @@
 <br>
 <br>
 <div class="container border p-3 bg-light">
-<form (ngSubmit)="createPost()" #postForm="ngForm">
+<form (ngSubmit)="uploadPhotoAndSendPost()" #postForm="ngForm">
 
 <!-- title -->
 <div class="form-group">
@@ -48,13 +48,12 @@
 <!-- image -->
 <div class="form-group">
 <div class="preview">
-  <img src = '{{ imgLink }}' alt = "(Your image here)" class="img-thumbnail">
+  <img id="imgpreview" src = '{{ imgLink }}' alt = "(Your image here)" class="img-thumbnail">
 </div>
 
-<form (ngSubmit)="uploadPhoto()">
   <div class="form-group">
     <input id="imgupload" name="image" type="file" accept= "image/*" class="form-control-file" required [(ngModel)]="input" #image="ngModel">
-    <button type="submit" class="btn btn-secondary btn-sm">Upload</button>
+    <!-- <button type="submit" class="btn btn-secondary btn-sm">Upload</button> -->
 
     <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
       <div *ngIf="image.errors.required">
@@ -64,7 +63,6 @@
 
 
   </div>
-</form>
 </div>
 
 <!-- full text -->
@@ -95,7 +93,7 @@ pattern="(([a-zA-z0-9]){1,30})((, ([a-zA-z0-9]){1,30}))*" required maxlength="10
     You must provide tags for your post so that it can be searched for.
   </div>
   <div *ngIf="tags.errors.pattern">
-    Please enter a valid sequence of tags (no blank tags, no whitespace, separated by a comma and a space, 30 characters max).
+    Please enter a valid sequence of tags (no blank tags, no whitespace, no special characters, separated by a comma and a space, 30 characters max).
   </div>
 </div>
 
@@ -103,8 +101,10 @@ pattern="(([a-zA-z0-9]){1,30})((, ([a-zA-z0-9]){1,30}))*" required maxlength="10
 
 <div class="col">
 <div class="float-right">
-<button type="submit" class="btn btn-primary btn-lg" [disabled]="!postForm.form.valid">Post</button>
+<button id="postButton" type="submit" class="btn btn-primary btn-lg" [disabled]="!postForm.form.valid">Post</button>
 <small id="postHelp" *ngIf="!postForm.form.valid" class="form-text text-muted">You must complete all fields (title, blurb, image, text, and tags) before posting.</small>
+<img id="loadingWheel" src="assets/images/loadingGif.gif" hidden>
+<small id="loadingText" class="form-text text-muted" hidden>Creating your post...</small>
 </div>
 </div>
 
