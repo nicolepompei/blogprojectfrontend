@@ -50,8 +50,9 @@ export class LoginComponent implements OnInit {
       //if(data) {
         this.isError = false;
         this.router.navigateByUrl('');
-        this.toastr.success('Login Successful');
+        this.toastr.success('Login Successful!');
       }, error => {
+        this.toastr.error('Credentials Incorrect, try again!')
         this.isError = true;
         throwError(error);
       }); 

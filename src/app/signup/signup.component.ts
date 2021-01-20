@@ -40,8 +40,9 @@ export class SignupComponent implements OnInit {
       .subscribe(() =>{
         this.router.navigate(['/login'],
         { queryParams: { registered: 'true' } });
+        this.toastr.success("Registration success! Please log in.")
       }, () => {
-        this.toastr.error('Registration Failed! Please try again');
+        this.toastr.error('Registration Failed! Please try again.');
       });
   }
 
