@@ -16,7 +16,7 @@ export class SearchListComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveTagName();
-    // this.getPostsByTag();
+    //this.getPostsByTag();
   }
 
   retrieveTagName(): void {

@@ -7,7 +7,7 @@ a.navbar-brand{
 a.nav-link{
     font-family: poppins;
     font-size: 400;
-    font-weight: 400; 
+    font-weight: 400;
 }
 
 button{
@@ -52,3 +52,6 @@ input{
   background-color: #00587a;
 }
 
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #008891;
+}

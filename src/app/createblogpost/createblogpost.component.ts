@@ -9,6 +9,7 @@ import { AuthserviceService } from '../service/authservice.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import {PostService} from '../service/post.service';
+import { Observable } from 'rxjs';
 
 
 
@@ -20,9 +21,9 @@ import {PostService} from '../service/post.service';
 export class CreateblogpostComponent implements OnInit {
   input;
   imgLink: string;
+  prevLink: string;
   tagsPresent: string;
   postRequestPayload: PostRequestPayload;
-  postDisabled = true;
 
   constructor(private imageService: ImageService,
               private authService: AuthserviceService,
@@ -40,27 +41,42 @@ export class CreateblogpostComponent implements OnInit {
                }
 
   ngOnInit(): void {
-
+    const imgSelector = document.getElementById('imgupload');
+    imgSelector.addEventListener('change', this.imageChanged);
   }
 
-  uploadPhoto(): void {
-    this.input = document.querySelector('#imgupload');
-    const imgPreview = document.querySelector('img');
-    console.log(this.input.files[0]);
-    this.imageService.uploadImage(this.input.files[0]).subscribe(
+  imageChanged() {
+    console.log("image changed");
+    let img = (document.getElementById('imgupload') as HTMLInputElement);
+    let preview = (document.getElementById('imgpreview') as HTMLImageElement);
+    console.log(URL.createObjectURL(img.files[0]));
+    preview.src = URL.createObjectURL(img.files[0]);
+  }
+
+  async uploadPhotoAndSendPost() {
+    let input = (document.querySelector('#imgupload') as HTMLInputElement);
+    let button = (document.getElementById("postButton") as HTMLButtonElement);
+    let loadingText = document.getElementById("loadingText");
+    let loadingWheel = document.getElementById("loadingWheel");
+    button.disabled = true;
+    loadingText.hidden = false;
+    loadingWheel.hidden = false;
+    console.log(input.files[0]);
+    this.imageService.uploadImage(input.files[0]).subscribe(
      data =>
       {
       this.imgLink = data;
-      imgPreview.src = data;
       console.log('link: ' + this.imgLink);
-      this.postDisabled = false;
-      console.log(this.postDisabled);
+      this.createPost();
+      button.disabled = false;
+      loadingText.hidden = true;
+      loadingWheel.hidden = true;
       }
     );
-
   }
 
-  createPost(): void{
+  async createPost(): Promise<void>{
+    //await this.uploadPhoto();
 
     let createdPost: PostRequestPayload = {
       username: this.authService.getUserName(),
@@ -73,8 +89,6 @@ export class CreateblogpostComponent implements OnInit {
 
     console.log(createdPost.title);
 
-
-
     this.postService.blogpostConnector(createdPost)
      .subscribe(
        () => {
@@ -82,7 +96,7 @@ export class CreateblogpostComponent implements OnInit {
      }, err => {
        this.toastr.error('Something went wrong! Please try again.');
     });
-    }
+  }
 
   convertTagsFromLongStringToIndividualTags(t: string): Tag[]{
       return this.convertStringArrayToTagArray(this.separateTags(t));
