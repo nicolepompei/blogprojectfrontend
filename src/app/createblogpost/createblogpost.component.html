@@ -67,14 +67,14 @@
 
 <!-- full text -->
 <div class="form-group">
-<textarea id="fulltextField" name="fulltext" class = "form-control" rows="5" placeholder = "Write your thoughts..." required pattern="^[^\s]+.*" maxlength="1000"[(ngModel)]="postRequestPayload.fulltext" #fulltext="ngModel"></textarea>
+<textarea id="fulltextField" name="fulltext" class = "form-control" rows="5" placeholder = "Write your thoughts..." required pattern="^.*\S+[\s\S\r]*" maxlength="1000"[(ngModel)]="postRequestPayload.fulltext" #fulltext="ngModel"></textarea>
 
 <div *ngIf="fulltext.invalid && (fulltext.dirty || fulltext.touched)" class="alert alert-danger">
   <div *ngIf="fulltext.errors.required">
     You must provide a body for your post. 
   </div>
   <div *ngIf="fulltext.errors.pattern">
-    The body of your post cannot start with a space and must have at least one (1) non-whitespace character.
+    The body of your post must have at least one (1) non-whitespace character.
   </div>
 </div>
 
