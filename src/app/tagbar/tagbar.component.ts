@@ -4,6 +4,7 @@ import {PostService} from '../service/post.service';
 import { ActivatedRoute } from '@angular/router';
 import {Blogpost} from "../blogpost-panel-list/blogpost-panel/Blogpost Models/blogpost.model";
 
+
 @Component({
   selector: 'app-tagbar',
   templateUrl: './tagbar.component.html',
@@ -13,7 +14,7 @@ export class TagbarComponent implements OnInit {
   blogposts = [];
   tagSet = new Set();
   tagName;
-  blogPostListByTag = [];
+  
   
 
   constructor(
@@ -25,7 +26,7 @@ export class TagbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTagsList();
-    this.retrieveTagName();
+    //this.retrieveTagName();
   }
 
   getTagsList(): void {
@@ -40,23 +41,23 @@ export class TagbarComponent implements OnInit {
     console.log(this.tagSet);
   }
 
-  retrieveTagName(): void {
-    this.tagName = this.activatedRoute.snapshot.params.tag;
-  }
+  // retrieveTagName(): void {
+  //   this.tagName = this.activatedRoute.snapshot.params.tag;
+  // }
 
-  getPostsByTag(): void {
-    this.postService.getAllByTag(this.tagName)
-      .subscribe(response => {
-        console.log(response);
-        for (const post of response) {
-          const postObject = new Blogpost(
-            post.id, post.userName, post.title,
-            post.imageLink, post.blurb, post.fullText, post.creationTimestamp
-          );
-          this.blogposts.push(postObject);
-        }
-      });
-      console.log(this.blogposts);
-  }
+  // getPostsByTag(): void {
+  //   this.postService.getAllByTag(this.tagName)
+  //     .subscribe(response => {
+  //       console.log(response);
+  //       for (const post of response) {
+  //         const postObject = new Blogpost(
+  //           post.id, post.userName, post.title,
+  //           post.imageLink, post.blurb, post.fullText, post.creationTimestamp
+  //         );
+  //         this.blogposts.push(postObject);
+  //       }
+  //     });
+  //     console.log(this.blogposts);
+  // }
 
 }
