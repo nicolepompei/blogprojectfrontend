@@ -13,15 +13,12 @@ import { Router } from '@angular/router'
 export class HttpinterceptorService implements HttpInterceptor {
 
   isTokenRefreshing = false;
-  //a behavior subject can have a value, the new token from refresh token is assigned to this 
+  
   refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(public authService: AuthserviceService, 
     public router: Router) { }
-// in intercept method, recieve JWT through authService.getJetToken()
-//if valid we add the token to the Authorization header which has a value according to
-//the Bearer scheme
-//if the token is invalid, request a new JWT by calling authservice.refreshToken()
+
   intercept(req: HttpRequest<any>, next: HttpHandler):
       Observable<HttpEvent<any>> {
           if(req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
@@ -29,9 +26,7 @@ export class HttpinterceptorService implements HttpInterceptor {
           }
           const jwtToken = this.authService.getJwtToken();
 
-
-          //test
-            req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + jwtToken)});
+          req = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + jwtToken)});
 
             return next.handle(req).pipe(
               catchError((error) => {
@@ -126,8 +121,6 @@ export class HttpinterceptorService implements HttpInterceptor {
           setHeaders: {
             Authorization: `Bearer ${jwtToken}`
           }
-          // headers: req.headers.set('Authorization',
-          // 'Bearer ' + jwtToken)
         });
       }
 }
