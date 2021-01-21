@@ -9,6 +9,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { map, tap } from 'rxjs/operators';
 import { API_URL } from '../app.constants';
 import { EventEmitter } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -26,13 +27,15 @@ export class AuthserviceService {
   };
 
   constructor(private httpClient: HttpClient,
-              private localStorage: LocalStorageService) { }
+              private localStorage: LocalStorageService, 
+              public toastr: ToastrService) { }
 
 
 
 
   signup(signupRequestPayload: SignupRequestPayload): Observable<any>{
-   return this.httpClient.post(`${API_URL}/api/auth/signup`, signupRequestPayload, { responseType: 'text'});
+    let response = this.httpClient.post(`${API_URL}/api/auth/signup`, signupRequestPayload, { responseType: 'text'});
+    return response;
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean>{
@@ -50,6 +53,7 @@ export class AuthserviceService {
   }
 
   refreshToken() {
+    console.log("requesting the refresh token from the backend");
     return this.httpClient.post<LoginResponse>
     (`${API_URL}/auth/refresh/token`,
     this.refreshTokenPayload)
@@ -64,17 +68,18 @@ export class AuthserviceService {
   }
 
   logout(){
-    this.httpClient.post(`${API_URL}/api/auth/logout`, this.refreshTokenPayload,
-    { responseType: 'text'})
-    .subscribe(data => {
-      console.log(data);
-    }, error => {
-      throwError(error);
-    });
     this.localStorage.clear('authenticationToken');
     this.localStorage.clear('username');
     this.localStorage.clear('refreshToken');
     this.localStorage.clear('expiresAt');
+
+    if(!this.loggedIn){
+      this.toastr.success("Log out successful. Bye!")
+    } else{
+      error => {
+        throwError(error);
+      }
+    }
   }
 
   getJwtToken() {

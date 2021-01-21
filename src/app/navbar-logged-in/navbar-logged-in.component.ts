@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 import {AuthserviceService} from "../service/authservice.service";
 
 @Component({
@@ -13,7 +14,7 @@ export class NavbarLoggedInComponent implements OnInit {
   toggle = true;
   status = 'Enable';
 
-  constructor(private router: Router, private authService: AuthserviceService) { }
+  constructor(private router: Router, private authService: AuthserviceService, public toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -32,6 +33,7 @@ export class NavbarLoggedInComponent implements OnInit {
   logOut(): void {
     this.authService.logout();
     this.isLoggedIn = false;
+    this.toastr.success("Logout successful. Bye!");
     this.router.navigate(['/home']);
   }
 
