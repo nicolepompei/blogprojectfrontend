@@ -52,42 +52,44 @@ export class AuthserviceService {
       }));
   }
 
-  // refreshToken() {
-  //   console.log("requesting the refresh token from the backend");
-  //   return this.httpClient.post<LoginResponse>
-  //   (`${API_URL}/auth/refresh/token`,
-  //   this.refreshTokenPayload)
-  //   .pipe(tap(response => {
-  //     this.localStorage.clear('authenticationToken');
-  //     this.localStorage.clear('expiresAt');
+  refreshToken() {
+    console.log("requesting the refresh token from the backend");
+    return this.httpClient.post<LoginResponse>
+    (`${API_URL}/auth/refresh/token`,
+    this.refreshTokenPayload)
+    .pipe(tap(response => {
+      this.localStorage.clear('authenticationToken');
+      this.localStorage.clear('expiresAt');
 
-  //     this.localStorage.store('authenticationToken',
-  //     response.authenticationToken);
-  //     this.localStorage.store('expiresAt', response.expiresAt);
-  //   }));
-  // }
+      this.localStorage.store('authenticationToken',
+      response.authenticationToken);
+      this.localStorage.store('expiresAt', response.expiresAt);
+    }));
+  }
 
   logout(){
-
-  //  let req = this.httpClient.post(`${API_URL}/api/auth/logout`, this.refreshTokenPayload,
-  //   { responseType: 'text'})
-  //   .subscribe(data => {
-  //     this.toastr.success("Log out successful. Bye!")
-  //     console.log(data);
-  //   }, error => {
-  //     throwError(error);
-  //   });
+    // console.log("calling logout method in auth service");
+    // this.httpClient.post(`${API_URL}/api/auth/logout`, this.refreshTokenPayload,
+    // { responseType: 'text'}
+    // )
+    // .subscribe(data => {
+    //   this.toastr.success("Log out successful. Bye!")
+    //   console.log(data);
+    // }, error => {
+    //   throwError(error);
+    // });
     this.localStorage.clear('authenticationToken');
     this.localStorage.clear('username');
     this.localStorage.clear('refreshToken');
     this.localStorage.clear('expiresAt');
-    // if(!this.loggedIn){
-    //   this.toastr.success("Log out successful. Bye!")
-    // } else{
-    //   error => {
-    //     throwError(error);
-    //   }
-    // }
+
+    if(!this.loggedIn){
+      this.toastr.success("Log out successful. Bye!")
+    } else{
+      error => {
+        throwError(error);
+      }
+    }
   }
 
   getJwtToken() {

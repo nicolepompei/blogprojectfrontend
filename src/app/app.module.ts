@@ -24,6 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { SearchPanelsComponent } from './search-list/search-panels/search-panels.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { ErrorhandlingService } from './service/errorhandling.service';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +60,11 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpinterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorhandlingService,
       multi: true
     }
   ],
