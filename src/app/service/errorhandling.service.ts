@@ -53,16 +53,11 @@ export class ErrorhandlingService implements HttpInterceptor{
               console.log(`redirect to home`)
               handled = true;
               break;
-            case 400:
-                this.router.navigateByUrl("");
-                this.toastr.error("Something went wrong. Please try again.");
-                console.log(`redirect to home`)
-                handled = true;
-                break;
           }
-        }
+        } 
       }
       else {
+        this.router.navigateByUrl("/login");
         console.error("Other Errors");
       }
 

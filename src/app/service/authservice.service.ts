@@ -68,16 +68,6 @@ export class AuthserviceService {
   }
 
   logout(){
-    // console.log("calling logout method in auth service");
-    // this.httpClient.post(`${API_URL}/api/auth/logout`, this.refreshTokenPayload,
-    // { responseType: 'text'}
-    // )
-    // .subscribe(data => {
-    //   this.toastr.success("Log out successful. Bye!")
-    //   console.log(data);
-    // }, error => {
-    //   throwError(error);
-    // });
     this.localStorage.clear('authenticationToken');
     this.localStorage.clear('username');
     this.localStorage.clear('refreshToken');

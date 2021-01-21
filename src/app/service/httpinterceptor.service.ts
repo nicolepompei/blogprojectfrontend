@@ -10,7 +10,7 @@ import { ifError } from 'assert';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
-  providedIn: 'root'
+providedIn: 'root'
 })
 
 export class HttpinterceptorService implements HttpInterceptor {
@@ -30,9 +30,9 @@ export class HttpinterceptorService implements HttpInterceptor {
           if(req.url.includes("refresh") || 
             req.url.includes("login")
         ){
-            // if(req.url.includes("refresh")) {
-            //   this.authService.logout();
-            // }
+            if(req.url.includes("refresh")) {
+              this.authService.logout();
+            }
             return Observable.throw(error);
         }
       
@@ -45,6 +45,7 @@ export class HttpinterceptorService implements HttpInterceptor {
                 && error.status === 401){
                   return this.handleAuthErrors(req, next);
                 } else {
+                          this.router.navigateByUrl("/login");
                           return throwError(error);
                         }
                     }));
