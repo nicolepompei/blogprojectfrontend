@@ -1,27 +1,15 @@
-# Blogprojectfrontend
+# blrb - Full Stack Blog Application Frontend 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Frontend Tech Stack includes Angular11, TypeScript, Javascript, HTML5, Angular Bootstrap, and CSS3.  Amazon S3 configuration handles upload and retrieval of images for blog posts.
+<br>
+<br>
+HTTP Interceptor handles registration and authentication flow with the JSONWebToken and the Bearer scheme.
+<br>
+<br>
+Users are able to register an account, log in, view all blog posts, view their specific blog posts, search for posts by tag, click tag side bar to view all posts associated to a specific tag, create a blog post with an image, and log out.
+<br>
+<br>
+The application is deployed to Heroku with a MySQL database instance hosted via Amazon RDS.
+<br>
+<br>
+Check out the app here! blrb
