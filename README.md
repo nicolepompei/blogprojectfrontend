@@ -1,6 +1,10 @@
 # blrb - Full Stack Blog Application Frontend 
 
-Frontend Tech Stack includes Angular11, TypeScript, Javascript, Webstorage Library, Toastr Library, HTML5, Angular Bootstrap, and CSS3.  Amazon S3 configuration handles upload and retrieval of images for blog posts. 
+Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a>
+<br>
+<br>
+<strong><underline>Frontend Tech Stack:</strong></underline>
+Angular11, TypeScript, Javascript, Webstorage Library, Toastr Library, HTML5, Angular Bootstrap, and CSS3.  Amazon S3 configuration handles upload and retrieval of images for blog posts. 
 <br>
 <br>
 AuthInterceptor implements HTTPInterceptor and handles registration and authentication flow with the JSONWebToken and the Bearer scheme, RouteGuard protects pages with restricted access, and ErrorHandlingInterceptor implements HTTPInterceptor to handle errors. Authentication tokens are stored in local storage via Webstorage.
@@ -18,4 +22,4 @@ Users are able to register an account, log in, view all blog posts, view their s
 The application is deployed to Heroku with a MySQL database instance hosted via Amazon RDS.
 <br>
 <br>
-Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a>
+
