@@ -1,9 +1,8 @@
 # blrb - Full Stack Blog Application Frontend 
 
-<strong>Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a></strong>
-<br>
-<br>
-<strong><underline>Frontend Tech Stack:</strong></underline>
+## Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a>
+
+##Frontend Tech Stack:
 Angular11, TypeScript, Javascript, Webstorage Library, Toastr Library, HTML5, Angular Bootstrap, and CSS3.  Amazon S3 configuration handles upload and retrieval of images for blog posts. 
 <br>
 <br>
@@ -16,7 +15,7 @@ All form fields incorporate form validation with RegEx. Forms that require input
 Popup notifcations are implenented via Toastr JS library for success and error messages.
 <br>
 <br>
-<strong>Endpoints:</strong><br>
+## Endpoints:
 `/signup` Register a new account.<br>
 `/login` Login for an existing user.<br>
 `/logout` Logout for a signed in user.<br>
@@ -30,7 +29,7 @@ Popup notifcations are implenented via Toastr JS library for success and error m
 The application is deployed to Heroku with a MySQL database instance hosted via Amazon RDS.
 <br>
 <br>
-<strong>Future Feature Roadmap:</strong><br>
+## Future Feature Roadmap:
 Update User Details<br>
 Update Post<br>
 Delete Post<br>
