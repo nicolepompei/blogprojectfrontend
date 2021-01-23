@@ -16,18 +16,27 @@ All form fields incorporate form validation with RegEx. Forms that require input
 Popup notifcations are implenented via Toastr JS library for success and error messages.
 <br>
 <br>
-<strong>Endpoints:</strong>
-`/signup` Register a new account. 
-`/login` Login for an existing user. 
-`/logout` Logout for a signed in user. 
-`/createpost` Create a post with an image. 
-`/fullpost/{id}` View that displays a full blog post.
-`/home` Dashboard view that displays all posts on the platform and tag bar
-`/myPosts` View that displays all of a logged in users posts.
-`/search/{tag}` View that displays search by tag results in nav bar search bar
+<strong>Endpoints:</strong><br>
+`/signup` Register a new account.<br>
+`/login` Login for an existing user.<br>
+`/logout` Logout for a signed in user.<br>
+`/createpost` Create a post with an image.<br>
+`/fullpost/{id}` View that displays a full blog post.<br>
+`/home` Dashboard view that displays all posts on the platform and tag bar.<br>
+`/myPosts` View that displays all of a logged in users posts.<br>
+`/search/{tag}` View that displays search by tag results in nav bar search bar.<br>
 <br>
 <br>
 The application is deployed to Heroku with a MySQL database instance hosted via Amazon RDS.
 <br>
 <br>
+<strong>Future Feature Roadmap:</strong><br>
+Update User Details<br>
+Update Post<br>
+Delete Post<br>
+Add comments<br>
+Edit comments<br>
+Delete comments<br>
+Like and Dislike Posts<br>
+Homepage ranking based on most popular posts<br>
 
