@@ -1,6 +1,6 @@
 # blrb - Full Stack Blog Application Frontend 
 
-Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a>
+<strong>Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a></strong>
 <br>
 <br>
 <strong><underline>Frontend Tech Stack:</strong></underline>
@@ -16,7 +16,15 @@ All form fields incorporate form validation with RegEx. Forms that require input
 Popup notifcations are implenented via Toastr JS library for success and error messages.
 <br>
 <br>
-Users are able to register an account, log in, view all blog posts, view their specific blog posts, search for posts by tag, click tag side bar to view all posts associated to a specific tag, create a blog post with an image, and log out. A user is unable to register for an account that already exists, as well as log into an existing account with incorrect credentials. 
+<strong>Endpoints:</strong>
+`/signup` Register a new account. 
+`/login` Login for an existing user. 
+`/logout` Logout for a signed in user. 
+`/createpost` Create a post with an image. 
+`/fullpost/{id}` View that displays a full blog post.
+`/home` Dashboard view that displays all posts on the platform and tag bar
+`/myPosts` View that displays all of a logged in users posts.
+`/search/{tag}` View that displays search by tag results in nav bar search bar
 <br>
 <br>
 The application is deployed to Heroku with a MySQL database instance hosted via Amazon RDS.
