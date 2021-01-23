@@ -2,7 +2,7 @@
 
 ## Check out the app here! <a href="https://blog-project-frontend.herokuapp.com/">blrb</a>
 
-##Frontend Tech Stack:
+## Frontend Tech Stack:
 Angular11, TypeScript, Javascript, Webstorage Library, Toastr Library, HTML5, Angular Bootstrap, and CSS3.  Amazon S3 configuration handles upload and retrieval of images for blog posts. 
 <br>
 <br>
